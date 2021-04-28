@@ -1,0 +1,9 @@
+[package]
+name = "speedy-streamer"
+version = "0.1.0"
+authors = ["iwismer <isaac@iwismer.ca>"]
+edition = "2018"
+
+[dependencies]
+futures = "0.3.14"
+tokio = { version = "1.5.0", features = ["net", "io-util", "rt", "fs", "signal", "macros", "sync", "rt-multi-thread"] }

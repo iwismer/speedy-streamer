@@ -1,0 +1,38 @@
+#! /bin/sh
+
+check_running() {
+  RESULT=`ps -ef | grep $1 | grep -v 'grep'`
+  result=$(echo $ps_out | grep "$1")
+  if [[ "$result" != "" ]];then
+      return 1
+  else
+      return 0
+  fi
+}
+
+/usr/bin/logger -t app-startup "waiting for network"
+# Wait until the network is both connected and we have a DNS server
+while true; do
+  netconf | grep -q "connectionStatus='Connected'" && break
+  sleep 1
+done
+/usr/bin/logger -t app-startup "network is up"
+
+(( streamerCount = 1 ))
+(( readerCount = 1 ))
+while true ; do
+  if check_running "/cust/rfid_reader" ; then
+    logger -t app-startup "running chip reader"
+    /cust/rfid_reader &
+    /usr/bin/logger -p user.notice "Restarting reader application, count $readerCount."
+    (( readerCount = readerCount + 1 ))
+  fi
+
+  if check_running "/cust/streamer"; then
+    logger -t app-startup "running read streamer"
+    /cust/streamer
+    /usr/bin/logger -p user.notice  "Restarting streamer application, count $streamerCount."
+    (( streamerCount = streamerCount + 1 ))
+  fi
+  sleep 10
+done

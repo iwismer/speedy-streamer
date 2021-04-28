@@ -1,0 +1,11 @@
+[version]
+    Comp='myCAP'
+    Ver='1.0.0.0'
+    Label='Final'
+    Mach='builder01'
+    User='JohnSmith'
+    Date=''
+    SCMRev=''
+    SCMUrl=''
+    SCMBranch=''
+
