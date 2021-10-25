@@ -29,8 +29,8 @@
 #include <sstream>
 #include <string>
 
-#include "impinj_ltkcpp.h"
 #include "ltkcpp.h"
+#include "impinj_ltkcpp.h"
 #include "time.h"
 
 #define TID_OP_SPEC_ID 123
