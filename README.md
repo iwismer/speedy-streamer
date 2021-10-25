@@ -6,7 +6,7 @@ This was developed and tested on the Speedway R420.
 
 **This is still very much in beta, do not use it during real events!**
 
-## Building with Docker (recommended)
+# Building with Docker (recommended)
 
 Download the Octane embedded development tools 6.0.0: <https://support.impinj.com/hc/en-us/articles/202755288-Speedway-Revolution-Embedded-Development-Tools-and-Sample-Application-ETK->.
 
@@ -62,6 +62,12 @@ Log into your reader's interface and upload the generated CAP file.
 Reboot the reader and the application will start automatically.
 
 Connect to the reader on port 10000 to start receiving reads.
+
+# Clients
+
+There are 2 clients included. The python client can be easily modified to do any number of things, right now it graphs the first 250 reads it receives.
+
+The Rust client just writes everything it receives over the network to a file. It is run with the arguments: `receiver [reader-ip] [reader-port] [output-file]`
 
 # License
 
