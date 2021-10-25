@@ -68,7 +68,7 @@ bin/rfid_reader_arm: check_env $(SOURCES)
 arm: bin/rfid_reader_arm
 
 target/armv5te-unknown-linux-gnueabi/release/streamer:
-	cargo build --target=armv5te-unknown-linux-gnueabi --release
+	cargo build --target=armv5te-unknown-linux-gnueabi --release --bin streamer
 	arm-none-linux-gnueabi-strip target/armv5te-unknown-linux-gnueabi/release/streamer
 
 streamer_arm: target/armv5te-unknown-linux-gnueabi/release/streamer
