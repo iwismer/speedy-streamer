@@ -7,3 +7,11 @@ edition = "2018"
 [dependencies]
 futures = "0.3.14"
 tokio = { version = "1.5.0", features = ["net", "io-util", "rt", "fs", "signal", "macros", "sync", "rt-multi-thread"] }
+
+[[bin]]
+name = "streamer"
+path = "src/main.rs"
+
+[[bin]]
+name = "receiver"
+path = "src/receiver.rs"

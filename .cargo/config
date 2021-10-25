@@ -2,3 +2,8 @@
 rustflags = ["-C", "target-feature=+crt-static", "-C", "target-cpu=arm926ej-s"]
 linker = "arm-none-linux-gnueabi-gcc"
 ar = "arm-none-linux-gnueabi-ar"
+
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-Ctarget-feature=+crt-static"]
+[target.i686-pc-windows-msvc]
+rustflags = ["-Ctarget-feature=+crt-static"]

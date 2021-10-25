@@ -14,7 +14,7 @@ Download the Octane embedded development tools 6.0.0: <https://support.impinj.co
 Follow the instructions on the page for setting up Ubuntu with the cross compilation toolchain.
 Compile the sample application to ensure it is all working.
 
-Install cargo and build this application with the command `cargo build --target=armv5te-unknown-linux-gnueabi`.
+Install cargo and build this application with the command `cargo build --target=armv5te-unknown-linux-gnueabi --bin streamer`.
 If there is an error, it is likely that you have installed the toolchain incorrectly.
 
 Next, copy the `lib` and `include` directories from the sample application into this folder.
